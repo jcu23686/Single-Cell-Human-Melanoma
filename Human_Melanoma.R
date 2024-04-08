@@ -79,7 +79,7 @@ saveRDS(HM_data, file = 'Human_Melanoma.RDS')
 #markers to aid with cluster identification
 # find markers for every cluster compared to all remaining cells, report only the positive
 # ones
-HM_data.markers <- FindAllMarkers(HM_data), only.pos = TRUE)
+HM_data.markers <- FindAllMarkers(HM_data, only.pos = TRUE)
 HM_data.markers %>%
   group_by(cluster) %>%
   dplyr::filter(avg_log2FC > 1)
